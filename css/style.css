@@ -1,0 +1,98 @@
+/* CSS variables define  for Simple responsive portfolio style */
+:root{
+  --bg-color:#0f1724;
+  --card-color:#0b1220;
+  --muted-color:#9aa4b2;
+  --accent-color:#7dd3fc;
+  --text-color:#e6eef8;
+  --radius-width:12px;
+  --container-width:1100px;
+}
+
+/*  fonts import */
+@font-face {
+  font-family: "Roboto_Condensed";
+  src: url("../fonts/RobotoCondensed-Italic-VariableFont_wght.ttf");
+  width: normal;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter,"Roboto_Condensed";
+  background:linear-gradient(180deg,#071127 0%, #071b2a 100%);
+  color:var(--text-color);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+.container{max-width:var(--container-width);margin:0 auto;padding:1rem}
+.nav{backdrop-filter: blur(6px);position:sticky;top:0;z-index:50;background:rgba(4,7,12,0.35)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem}
+.brand{font-weight:700}
+.nav-links{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
+.nav-links a{color:var(--muted-color);text-decoration:none}
+.nav-toggle{display:none;background:transparent;border:0;color:var(--muted-color);font-size:1.25rem}
+
+/* Hero */
+.hero{padding:3rem 0}
+.hero-inner{display:flex;gap:2rem;align-items:center}
+.hero-text{flex:1}
+.hero-text h1{font-size:2rem;margin:0 0 0.5rem}
+.hero-text p{color:var(--muted-color);margin:0 0 1rem}
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:10px;background:var(--accent-color);color:#022; text-decoration:none;font-weight:600;margin-right:0.5rem}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--text-color)}
+.hero-image img{width:220px;height:220px;border-radius:16px;background:linear-gradient(135deg,#0ea5e9,#60a5fa);display:block;padding:1rem}
+
+/* Sections */
+.section{padding:2rem 0}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.project-card{background:rgba(255,255,255,0.02);padding:1rem;border-radius:12px}
+.project-card img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:0.5rem}
+.project-link{display:inline-block;margin-top:0.5rem;color:var(--accent-color);text-decoration:none}
+
+.skills-list{display:flex;flex-wrap:wrap;gap:0.5rem;list-style:none;padding:0;margin:0}
+.skills-list li{background:rgba(255,255,255,0.03);padding:0.4rem 0.6rem;border-radius:8px;color:var(--muted-color)}
+
+.contact-form{display:grid;gap:0.5rem;max-width:560px}
+.contact-form label{display:block;font-size:0.95rem;color:var(--muted-color)}
+.contact-form input,.contact-form textarea{width:100%;padding:0.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text-color)}
+.contact-form button{margin-top:0.5rem;border:0}
+.mailto{color: blue;}
+.mailto:hover{color: orange}
+
+
+/* Footer */
+.footer{padding:1rem 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted-color);font-size:0.9rem;display:flex;justify-content:space-between;align-items:center; background: rgba(4,7,12,0.35);}
+
+/* pseudo-class */
+.socials a{
+  text-decoration: none;
+  color: blue;
+}
+
+.socials a:hover {
+  color: orange;
+}
+
+/*  linkedin and github links */
+.github{
+  position: relative;
+  right: 5px;
+}
+
+.linkedin{
+  position: relative;
+  left: 70px;
+}
+
+
+
+/* Responsive */
+@media(max-width:800px){
+  .hero-inner{flex-direction:column-reverse;text-align:center}
+  .nav-links{display:none}
+  .nav-toggle{display:block}
+}
+
