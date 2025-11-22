@@ -66,7 +66,7 @@ body{
 /* Footer */
 .footer{padding:1rem 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted-color);font-size:0.9rem;display:flex;justify-content:space-between;align-items:center; background: rgba(4,7,12,0.35);}
 
-/* pseudo-class */
+/* Pseudo-class */
 .socials a{
   text-decoration: none;
   color: blue;
@@ -76,7 +76,7 @@ body{
   color: orange;
 }
 
-/*  linkedin and github links */
+/*  Linkedin and Github links */
 .github{
   position: relative;
   right: 5px;
