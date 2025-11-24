@@ -27,7 +27,7 @@ body {
 
 body {
   margin: 0;
-  font-family: Inter, "Roboto_Condensed";
+  font-family: Inter, Arial, Helvetica, sans-serif;
   background: linear-gradient(180deg, #071127 0%, #071b2a 100%);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
@@ -208,11 +208,12 @@ body {
 }
 
 .mailto {
-  color: blue;
+  font-family: "Roboto_Condensed";
+  color: #3498db;
 }
 
 .mailto:hover {
-  color: orange
+  color: #29b94146;
 }
 
 
@@ -228,14 +229,10 @@ body {
   background: rgba(4, 7, 12, 0.35);
 }
 
-/* Pseudo-class */
-.socials a {
-  text-decoration: none;
-  color: blue;
-}
-
-.socials a:hover {
-  color: orange;
+.footer p{
+  font-family: "Roboto_Condensed";
+  position: relative;
+  right: 25px;
 }
 
 /*  Linkedin and Github links */
@@ -247,7 +244,15 @@ body {
   /* Assurez-vous que les liens sont bien disposés */
 }
 
+/* Pseudo-class */
+.socials a {
+  text-decoration: none;
+  color: #3498db;
+}
 
+.socials a:hover {
+  color: #29b94146;
+}
 
 /* Responsive */
 @media(max-width:800px) {
