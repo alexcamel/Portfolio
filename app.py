@@ -54,7 +54,7 @@ def handle_contact():
         }
 
         # Adresse email de reception des messages
-        RECIPIENT_EMAIL = "alexcamelgouimanan@gmail.com" 
+        RECIPIENT_EMAIL = "devaleursinguefor@gmail.com" 
 
         try:
             # Création de l'objet Message pour l'envoi

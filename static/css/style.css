@@ -229,16 +229,42 @@ body {
   background: rgba(4, 7, 12, 0.35);
 }
 
+.langue ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.langue li {
+  margin-right: 10px;
+}
+
+.langue a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.langue a:hover {
+  color: #666;
+}
+
+.langue a.active {
+  color: #337ab7;
+  font-weight: bold;
+}
+
 .footer p{
   font-family: "Roboto_Condensed";
-  position: relative;
-  right: 25px;
+  
 }
 
 /*  Linkedin and Github links */
 /* Nouveau style pour les réseaux sociaux pour les placer côte à côte facilement */
 .socials {
   display: flex;
+  margin-left: 22px;
   gap: 1.5rem;
   /* Espace entre les icônes/liens */
   /* Assurez-vous que les liens sont bien disposés */
@@ -326,9 +352,5 @@ body {
     gap: 0.5rem;
   }
 }
-
-
-
-
 
 
