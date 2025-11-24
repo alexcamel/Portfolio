@@ -25,9 +25,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
-    // 2. GESTION DU FORMULAIRE DE CONTACT
-    // La logique d'envoi est gérée par Flask (app.py).
-    // Le JavaScript ne fait plus de simulation pour permettre au HTML
-    // d'envoyer les données à la route /contact.
 });
