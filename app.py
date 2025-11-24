@@ -1,13 +1,16 @@
 # --- 1. Importation des modules nécessaires ---
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from dotenv import load_dotenv
 import os
 from flask_mail import Mail, Message
+from flask_babel import Babel
 
 # Chargement des variables d'environnement du fichier .env
 load_dotenv() 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'ma_clé_sécrète'
+babel = Babel(app)
 
 # --- 2. Configuration de Flask-Mail ---
 # Ces paramètres sont lus directement du fichier .env
@@ -20,13 +23,25 @@ app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_USERNAME') # L'adresse d'env
 
 mail = Mail(app)
 
-# --- 3. Route pour afficher le portfolio ---
+# --- Route de selection de langues ---
+def get_locale():
+    return session.get('lang', request.accept_languages.best_match(['fr', 'en']))
+
+babel.init_app(app, locale_selector=get_locale)
+
+@app.route('/lang/<lang>')
+def set_language(lang):
+    session['lang'] = lang
+    return redirect(url_for('index'))
+
+
+# --- 4. Route pour afficher le portfolio ---
 @app.route('/')
 def index():
     # Affiche le fichier index.html
     return render_template('index.html')
 
-# --- 4. Route pour recevoir les messages du formulaire ---
+# --- 5. Route pour recevoir les messages du formulaire ---
 @app.route('/contact', methods=['POST'])
 def handle_contact():
     # Vérification de la soumission du formulaire via POST

@@ -25,4 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    // 2. Téléchargement du CV via internet
+    const lienCV = document.getElementById('telecharger-cv');
+    lienCV.addEventListener('click', (e) =>{
+        if (!navigator.onLine){
+            e.preventDefault();
+            alert('Vous devez être connecté à internet pour télécharger mon CV.');
+        }
+    });
 });

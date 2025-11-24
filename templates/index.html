@@ -27,7 +27,7 @@
         <h1> Bienvenue sur mon portfolio Dev ! <br> On me nomme Alex Camel</h1>
         <p>Développeur · Rédacteur scientifiques · Analyste de données · Créateur de solutions web modernes et scientifiques. <br> Voici une sélection de mes projets.</p>
         <a class="btn" href="#projects">Voir mes projets</a>
-        <a class="btn ghost" href="{{url_for('static', filename = 'assets/Alex_Camel_CV.pdf')}}" download>Télécharger mon CV</a>
+        <a class="btn ghost" href="{{url_for('static', filename = 'assets/Alex_Camel_CV.pdf')}}" id="telecharger-cv" download>Télécharger mon CV</a>
       </div>
       <div class=".hero-image">
         <img src="{{url_for('static', filename = 'assets/profile.png')}}" alt="Profil" />
@@ -67,7 +67,7 @@
         </article><br><br><br><br><br><br><br><br>
         
         <div class="socials">
-          <p>Pour voir les codes de chaque projet, veuillez consulter &nbsp<a href="https://github.com/alexcamel" aria-label="GitHub" >mon profil GitHub</a></p>
+          <p>Pour voir les codes de chaque projet, veuillez consulter &nbsp<a href="https://github.com/alexcamel" aria-label="GitHub" target="_blank">mon profil GitHub</a></p>
         </div>
 
       </div>
@@ -112,10 +112,18 @@
   <!--- Pied de page -->
   <footer class="footer">
     <div class="container">
+      <!-- Selection de langue -->
+       <div id="langue">
+        <ul>
+          <li><a href="{{url_for('set_language', lang='fr')}}">Français (FR) </a></li>
+          <li><a href="{{url_for('set_language', lang='en')}}">English (EN) </a></li>
+        </ul>
+       </div>
+
       <p>© 2025 Devweb - Portfolio</p>
       <div class="socials">
-        <a href="https://github.com/alexcamel" aria-label="GitHub">GitHub</a>
-        <a href="https://www.linkedin.com/in/camel-alex-gouimanan-0782b5278" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://github.com/alexcamel" aria-label="GitHub" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/camel-alex-gouimanan-0782b5278" aria-label="LinkedIn" target="_blank">LinkedIn</a>
       </div>
     </div>
   </footer>
