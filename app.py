@@ -96,7 +96,7 @@ def handle_contact():
             return redirect(url_for('index', _anchor='contact'))
             
         except Exception as e:
-            # En cas d'erreur (mauvaises infos SMTP, problème de connexion, etc.)
+            # En cas d'erreur que ça soit mauvaises infos SMTP, soit problème de connexion, etc.
             print(f"Erreur lors de l'envoi de l'email: {e}")
             # Redirection même en cas d'erreur (pour ne pas casser l'interface)
             return redirect(url_for('index', _anchor='contact'))
@@ -104,5 +104,5 @@ def handle_contact():
 
 
 if __name__ == '__main__':
-    # Lance l'application
+    # Lancement de l'application
     app.run(debug=True)
