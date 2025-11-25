@@ -17,17 +17,17 @@
 }
 
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 html,
 body {
-  height: 100%
+  height: 100%;
 }
 
 body {
   margin: 0;
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: "Roboto_Condensed";
   background: linear-gradient(180deg, #071127 0%, #071b2a 100%);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
@@ -38,7 +38,7 @@ body {
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 1rem
+  padding: 1rem;
 }
 
 .nav {
@@ -46,18 +46,20 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(4, 7, 12, 0.35)
+  background: rgba(4, 7, 12, 0.35);
 }
 
 .nav-inner {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1rem
+  display: flex;
+  padding: 0 1rem;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
 }
 
 .brand {
-  font-weight: 700
+  font-weight: 700;
 }
 
 .nav-links {
@@ -65,12 +67,12 @@ body {
   display: flex;
   gap: 1rem;
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 .nav-links a {
   color: var(--muted-color);
-  text-decoration: none
+  text-decoration: none;
 }
 
 .nav-toggle {
@@ -78,32 +80,34 @@ body {
   background: transparent;
   border: 0;
   color: var(--muted-color);
-  font-size: 1.25rem
+  font-size: 1.25rem;
 }
 
 /* Hero */
 .hero {
-  padding: 3rem 0
+  padding: 3rem 0;
 }
 
 .hero-inner {
   display: flex;
+  padding: 3rem 1rem;
+  flex-direction: row;
   gap: 2rem;
-  align-items: center
+  align-items: center;
 }
 
 .hero-text {
-  flex: 1
+  flex: 1;
 }
 
 .hero-text h1 {
   font-size: 2rem;
-  margin: 0 0 0.5rem
+  margin: 0 0 0.5rem;
 }
 
 .hero-text p {
   color: var(--muted-color);
-  margin: 0 0 1rem
+  margin: 0 0 1rem;
 }
 
 .btn {
@@ -114,13 +118,13 @@ body {
   color: #022;
   text-decoration: none;
   font-weight: 600;
-  margin-right: 0.5rem
+  margin-right: 0.5rem;
 }
 
 .btn.ghost {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--text-color)
+  color: var(--text-color);
 }
 
 .hero-image img {
@@ -129,24 +133,24 @@ body {
   border-radius: 16px;
   background: linear-gradient(135deg, #0ea5e9, #60a5fa);
   display: block;
-  padding: 1rem
+  padding: 1rem;
 }
 
 /* Sections */
 .section {
-  padding: 2rem 0
+  padding: 2rem 0;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem
+  gap: 1rem;
 }
 
 .project-card {
   background: rgba(255, 255, 255, 0.02);
   padding: 1rem;
-  border-radius: 12px
+  border-radius: 12px;
 }
 
 .project-card img {
@@ -154,14 +158,14 @@ body {
   height: 140px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 0.5rem
+  margin-bottom: 0.5rem;
 }
 
 .project-link {
   display: inline-block;
   margin-top: 0.5rem;
   color: var(--accent-color);
-  text-decoration: none
+  text-decoration: none;
 }
 
 .skills-list {
@@ -170,26 +174,26 @@ body {
   gap: 0.5rem;
   list-style: none;
   padding: 0;
-  margin: 0
+  margin: 0;
 }
 
 .skills-list li {
   background: rgba(255, 255, 255, 0.03);
   padding: 0.4rem 0.6rem;
   border-radius: 8px;
-  color: var(--muted-color)
+  color: var(--muted-color);
 }
 
 .contact-form {
   display: grid;
   gap: 0.5rem;
-  max-width: 560px
+  max-width: 560px;
 }
 
 .contact-form label {
   display: block;
   font-size: 0.95rem;
-  color: var(--muted-color)
+  color: var(--muted-color);
 }
 
 .contact-form input,
@@ -199,16 +203,15 @@ body {
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.04);
   background: transparent;
-  color: var(--text-color)
+  color: var(--text-color);
 }
 
 .contact-form button {
   margin-top: 0.5rem;
-  border: 0
+  border: 0;
 }
 
 .mailto {
-  font-family: "Roboto_Condensed";
   color: #3498db;
 }
 
@@ -229,28 +232,33 @@ body {
   background: rgba(4, 7, 12, 0.35);
 }
 
-.langue ul {
+.langues.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.langues ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
 }
 
-.langue li {
+.langues li {
   margin-right: 10px;
 }
 
-.langue a {
+.langues a {
   text-decoration: none;
   color: #333;
   transition: color 0.2s ease;
 }
 
-.langue a:hover {
+.langues a:hover {
   color: #666;
 }
 
-.langue a.active {
+.langues a.active {
   color: #337ab7;
   font-weight: bold;
 }
@@ -284,11 +292,12 @@ body {
 @media(max-width:800px) {
   .hero-inner {
     flex-direction: column-reverse;
-    text-align: center
+    text-align: center;
+    padding: 1rem;
   }
 
   .nav-toggle {
-    display: block
+    display: block;
   }
 
   /* Styles pour quand le menu est ouvert */
@@ -311,16 +320,21 @@ body {
 
 /* Pour les petits telephones */
 @media(max-width:500px) {
+  /* */
+  .hero-text {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    text-align: left;
+
+  }
 
   /* Réduction de la taille du titre principal (Hero) */
   .hero-text h1 {
     font-size: 1.6rem;
+    margin-top: 0.5rem;
   }
 
-  /* Mettre le texte du Hero un peu plus large pour qu'il respire */
-  .hero-inner {
-    padding: 1rem;
-  }
+  
 
   /* Rendre le Hero-image plus petit pour les très petits écrans */
   .hero-image img {

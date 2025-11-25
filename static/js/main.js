@@ -33,4 +33,16 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Vous devez être connecté à internet pour télécharger mon CV.');
         }
     });
+    // Traduction via internet
+    const langues = document.querySelector('.langues');
+
+    window.addEventListener('online', () =>{
+        langues.classList.remove('disabled');
+    });
+    window.addEventListener('offline', () =>{
+        langues.classList.add('disabled');
+    });
+    if (!navigator.onLine) {
+        langues.classList.add('disabled');
+    }
 });

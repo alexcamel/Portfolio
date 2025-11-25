@@ -1,73 +1,79 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio - Alex</title>
+  <title>🌐Portfolio - Alex</title>
   <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}" />
 </head>
+
 <body>
   <nav class="nav">
     <div class="container nav-inner">
       <div class="brand">Alex Camel GOUIMANAN</div>
       <ul class="nav-links">
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#skills">Compétences</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">{{ _('À propos') }}</a></li>
+        <li><a href="#projects">{{ _('Projets') }}</a></li>
+        <li><a href="#skills">{{ _('Compétences') }}</a></li>
+        <li><a href="#contact">{{ _('Contact') }}</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="ouvrir menu">☰</button>
+      <button class="nav-toggle" aria-label="{{ _('ouvrir menu') }}">☰</button>
     </div>
   </nav>
 
-    <!-- Expériences -->
+  <!-- Expériences -->
   <header class="hero" id="home">
     <div class="container hero-inner">
       <div class="hero-text">
-        <h1> Bienvenue sur mon portfolio Dev ! <br> On me nomme Alex Camel</h1>
-        <p>Développeur · Rédacteur scientifiques · Analyste de données · Créateur de solutions web modernes et scientifiques. <br> Voici une sélection de mes projets.</p>
-        <a class="btn" href="#projects">Voir mes projets</a>
-        <a class="btn ghost" href="{{url_for('static', filename = 'assets/Alex_Camel_CV.pdf')}}" id="telecharger-cv" download>Télécharger mon CV</a>
+        <h1> {{ _('Bienvenue sur mon portfolio Dev !')}} <br>{{ _(' On me nomme Alex Camel') }}</h1>
+        <p>{{ _('Développeur · Rédacteur scientifiques · Analyste de données · Créateur de solutions web modernes et
+          scientifiques. <br> Voici une sélection de mes projets.') }}</p>
+        <a class="btn" href="#projects">{{ _('Voir mes projets')}}</a>
+        <a class="btn ghost" href="{{url_for('static', filename = 'assets/Alex_Camel_CV.pdf')}}" id="telecharger-cv"
+          download>{{ _('Télécharger mon CV') }}</a>
       </div>
-      <div class=".hero-image">
+      <div class="hero-image">
         <img src="{{url_for('static', filename = 'assets/profile.png')}}" alt="Profil" />
       </div>
     </div>
   </header>
 
-  <!-- Profil -->    
+  <!-- Profil -->
   <main>
     <section id="about" class="section container">
-      <h2>À propos</h2>
-      <p>Je suis étudiant diplômé en Mathématiques-Informatique, un développeur passionné par la création d'interfaces propres et performantes. J'aime transformer des idées en produits digitaux utiles. <br>Pour en savoir plus sur moi, veuillez télécharger mon CV.</p>
+      <h2>{{ _('À propos') }}</h2>
+      <p>{{ _("Je suis étudiant diplômé en Mathématiques-Informatique, un développeur passionné par la création
+        d'interfaces propres et performantes. J'aime transformer des idées en produits digitaux utiles.") }} <br>{{
+        _('Pour en savoir plus sur moi, veuillez télécharger mon CV.')}}</p>
     </section>
     <!-- Liste de quelques projets réalisés -->
     <section id="projects" class="section container">
-      <h2>Projets</h2>
+      <h2>{{ _('Projets') }}</h2>
       <div class="projects-grid">
         <article class="project-card">
           <img src="{{url_for('static', filename = 'assets/project-1.svg')}}" alt="Project 1" />
           <h3>Project One</h3>
-          <p>Site vitrine réalisé en HTML/CSS/JS. Responsive et accessible.</p>
-          <a class="project-link" href="#">Voir le code</a>
+          <p>{{ _('Site vitrine réalisé en HTML/CSS/JS. Responsive et accessible.') }}</p>
+          <a class="project-link" href="#">{{ _('Voir le code') }}</a>
         </article>
 
         <article class="project-card">
           <img src="{{url_for('static', filename = 'assets/project-2.svg')}}" alt="Project 2" />
           <h3>Project Two</h3>
-          <p>Application web avec backend léger (API REST) et UI moderne.</p>
-          <a class="project-link" href="#">Voir le code</a>
+          <p>{{ _('Application web avec backend léger (API REST) et UI moderne.') }}</p>
+          <a class="project-link" href="#">{{ _('Voir le code') }}</a>
         </article>
 
         <article class="project-card">
           <img src="{{url_for('static', filename = 'assets/project-3.svg')}}" alt="Project 3" />
           <h3>Project Three</h3>
-          <p>Prototype interactif avec animations et transitions CSS.</p>
-          <a class="project-link" href="#">Voir le code</a>
+          <p>{{ _('Prototype interactif avec animations et transitions CSS.') }}</p>
+          <a class="project-link" href="#">{{ _('Voir le code') }}</a>
         </article><br><br><br><br><br><br><br><br>
-        
+
         <div class="socials">
-          <p>Pour voir les codes de chaque projet, veuillez consulter &nbsp<a href="https://github.com/alexcamel" aria-label="GitHub" target="_blank">mon profil GitHub</a></p>
+          <p>{{ _("Pour voir les codes de chaque projet, veuillez consulter") }} <a href="https://github.com/alexcamel" target="_blank">{{ _("mon profil GitHub") }}</a></p>
         </div>
 
       </div>
@@ -75,36 +81,37 @@
 
     <!-- Compétences -->
     <section id="skills" class="section container">
-      <h2>Compétences</h2>
+      <h2>{{ _('Compétences') }}</h2>
       <ul class="skills-list">
-        <li>HTML5 & CSS3</li>
-        <li>JavaScript (ES6+)</li>
-        <li>Flask / Python</li>
-        <li>Rédaction scientifiques</li>
-        <li>Analyste de données</li>
+        <li>{{ _('HTML5 & CSS3') }}</li>
+        <li>{{ _('JavaScript (ES6+)') }}</li>
+        <li>{{ _('Flask / Python') }}</li>
+        <li>{{ _('Rédaction scientifiques') }}</li>
+        <li>{{ _('Analyste de données') }}</li>
       </ul>
     </section>
 
     <section id="contact" class="section container">
-      <h2>Contact</h2>
+      <h2>{{ _('Contact') }}</h2>
       <!-- Formulaire d'envoi de message -->
-      <p>Vous pouvez m'envoyer un message par ce formulaire ou utiliser mon email.</p>
-      <form id="contact-form" class="contact-form">
+      <p>{{ _('Vous pouvez m\'envoyer un message par ce formulaire ou utiliser mon email.') }}</p>
+      <form id="contact-form" class="contact-form" method="POST" action="{{ url_for('handle_contact') }}">
         <label>
-          Nom
-          <input type="text" name="name" required/>
+          {{ _('Nom') }}
+          <input type="text" name="name" required />
         </label>
         <label>
-          Email
-          <input type="email" name="email" required/>
+          {{ _('Email') }}
+          <input type="email" name="email" required />
         </label>
         <label>
-          Message
+          {{ _('Message') }}
           <textarea name="message" rows="4" required></textarea>
         </label>
-        <button class="btn" type="submit">Envoyer</button>
+        <button class="btn" type="submit">{{ _('Envoyer') }}</button>
       </form>
-      <p class="muted">Ou envoie un email en cliquant sur <a href="mailto:devaleursinguefor@gmail.com" class="mailto">Envoyez-moi un email</a></p>
+      <p class="muted">{{ _('Ou envoie un email en cliquant sur') }} <a href="mailto:devaleursinguefor@gmail.com"
+          class="mailto">{{ _('Envoyez-moi un email') }}</a></p>
     </section>
   </main>
 
@@ -112,25 +119,23 @@
   <footer class="footer">
     <div class="container">
       <!-- Selection de langue -->
-       <div class="langue">
+      <div class="langues">
         <ul>
           <li><a href="{{url_for('set_language', lang='fr')}}">Français (FR) </a></li>
           <li><a href="{{url_for('set_language', lang='en')}}">English (EN) </a></li>
         </ul>
-       </div>
+      </div>
 
       <p>© 2025 Devweb - Portfolio</p>
       <div class="socials">
         <a href="https://github.com/alexcamel" aria-label="GitHub" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/camel-alex-gouimanan-0782b5278" aria-label="LinkedIn" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/camel-alex-gouimanan-0782b5278" aria-label="LinkedIn"
+          target="_blank">LinkedIn</a>
       </div>
     </div>
   </footer>
 
   <script src="{{url_for('static', filename = 'js/main.js')}}"></script>
 </body>
+
 </html>
-
-
-
-

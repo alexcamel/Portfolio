@@ -1,0 +1,186 @@
+# French translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-11-25 08:21+0100\n"
+"PO-Revision-Date: 2025-11-24 16:09+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/index.html:16 templates/index.html:45
+msgid "À propos"
+msgstr ""
+
+#: templates/index.html:17 templates/index.html:52
+msgid "Projets"
+msgstr ""
+
+#: templates/index.html:18 templates/index.html:84
+msgid "Compétences"
+msgstr ""
+
+#: templates/index.html:19 templates/index.html:95
+msgid "Contact"
+msgstr ""
+
+#: templates/index.html:21
+msgid "ouvrir menu"
+msgstr ""
+
+#: templates/index.html:29
+msgid "Bienvenue sur mon portfolio Dev !"
+msgstr ""
+
+#: templates/index.html:29
+msgid " On me nomme Alex Camel"
+msgstr ""
+
+#: templates/index.html:30
+msgid ""
+"Développeur · Rédacteur scientifiques · Analyste de données · Créateur de"
+" solutions web modernes et\n"
+"          scientifiques. <br> Voici une sélection de mes projets."
+msgstr ""
+
+#: templates/index.html:32
+msgid "Voir mes projets"
+msgstr ""
+
+#: templates/index.html:34
+msgid "Télécharger mon CV"
+msgstr ""
+
+#: templates/index.html:46
+msgid ""
+"Je suis étudiant diplômé en Mathématiques-Informatique, un développeur "
+"passionné par la création\n"
+"        d'interfaces propres et performantes. J'aime transformer des "
+"idées en produits digitaux utiles."
+msgstr ""
+
+#: templates/index.html:48
+msgid "Pour en savoir plus sur moi, veuillez télécharger mon CV."
+msgstr ""
+
+#: templates/index.html:57
+msgid "Site vitrine réalisé en HTML/CSS/JS. Responsive et accessible."
+msgstr ""
+
+#: templates/index.html:58 templates/index.html:65 templates/index.html:72
+msgid "Voir le code"
+msgstr ""
+
+#: templates/index.html:64
+msgid "Application web avec backend léger (API REST) et UI moderne."
+msgstr ""
+
+#: templates/index.html:71
+msgid "Prototype interactif avec animations et transitions CSS."
+msgstr ""
+
+#: templates/index.html:76
+msgid "Pour voir les codes de chaque projet, veuillez consulter."
+msgstr ""
+
+#: templates/index.html:76
+msgid "mon profil GitHub"
+msgstr ""
+
+#: templates/index.html:86
+msgid "HTML5 & CSS3"
+msgstr ""
+
+#: templates/index.html:87
+msgid "JavaScript (ES6+)"
+msgstr ""
+
+#: templates/index.html:88
+msgid "Flask / Python"
+msgstr ""
+
+#: templates/index.html:89
+msgid "Rédaction scientifiques"
+msgstr ""
+
+#: templates/index.html:90
+msgid "Analyste de données"
+msgstr ""
+
+#: templates/index.html:97
+msgid "Vous pouvez m'envoyer un message par ce formulaire ou utiliser mon email."
+msgstr ""
+
+#: templates/index.html:100
+msgid "Nom"
+msgstr ""
+
+#: templates/index.html:104
+msgid "Email"
+msgstr ""
+
+#: templates/index.html:108
+msgid "Message"
+msgstr ""
+
+#: templates/index.html:111
+msgid "Envoyer"
+msgstr ""
+
+#: templates/index.html:113
+msgid "Ou envoie un email en cliquant sur"
+msgstr ""
+
+#: templates/index.html:114
+msgid "Envoyez-moi un email"
+msgstr ""
+
+#~ msgid ""
+#~ "Développeur · Rédacteur scientifiques · "
+#~ "Analyste de données · Créateur de "
+#~ "solutions web modernes et scientifiques. "
+#~ "<br> Voici une sélection de mes "
+#~ "projets."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Je suis étudiant diplômé en "
+#~ "Mathématiques-Informatique, un développeur "
+#~ "passionné par la création d'interfaces "
+#~ "propres et performantes. J'aime transformer"
+#~ " des idées en produits digitaux "
+#~ "utiles."
+#~ msgstr ""
+
+#~ msgid "Pour voir les codes de chaque projet, veuillez consulter"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Développeur · Rédacteur scientifiques · "
+#~ "Analyste de données · Créateur de "
+#~ "solutions web modernes et\n"
+#~ "          scientifiques. <br> Voici une sélection de mes projets."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Je suis étudiant diplômé en "
+#~ "Mathématiques-Informatique, un développeur "
+#~ "passionné par la création\n"
+#~ "        d'interfaces propres et performantes."
+#~ " J'aime transformer des idées en "
+#~ "produits digitaux utiles."
+#~ msgstr ""
+
+#~ msgid "Pour voir les codes de chaque projet, veuillez consulter %(link)s."
+#~ msgstr ""
+
