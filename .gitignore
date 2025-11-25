@@ -1,4 +1,6 @@
-root.txt
-.env
 __pycache__
+messages.mo
+.env
+README.txt
+root.txt
 
