@@ -100,6 +100,8 @@ def handle_contact():
             print(f"Erreur lors de l'envoi de l'email: {e}")
             # Redirection même en cas d'erreur (pour ne pas casser l'interface)
             return redirect(url_for('index', _anchor='contact'))
+        
+
 
 if __name__ == '__main__':
     # Lance l'application

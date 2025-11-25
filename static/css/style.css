@@ -13,7 +13,6 @@
 @font-face {
   font-family: "Roboto_Condensed";
   src: url("../fonts/RobotoCondensed-Italic-VariableFont_wght.ttf");
-  width: normal;
 }
 
 * {
@@ -30,8 +29,6 @@ body {
   font-family: "Roboto_Condensed";
   background: linear-gradient(180deg, #071127 0%, #071b2a 100%);
   color: var(--text-color);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
 }
 
@@ -227,8 +224,6 @@ body {
   color: var(--muted-color);
   font-size: 0.9rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: rgba(4, 7, 12, 0.35);
 }
 
@@ -250,7 +245,6 @@ body {
 
 .langues a {
   text-decoration: none;
-  color: #333;
   transition: color 0.2s ease;
 }
 
@@ -334,12 +328,19 @@ body {
     margin-top: 0.5rem;
   }
 
-  
+  /* Assurance d'une taille de police lisible pour le corps du texte */
+  body{
+    font-size: 16px;
+    padding-left: 1rem;   /* Padding à gauche */
+    padding-right: 1rem;  /* Padding à droite */
+    /* padding: 0 1rem; signifie haut et bas*/
+   }
 
   /* Rendre le Hero-image plus petit pour les très petits écrans */
   .hero-image img {
     width: 180px;
     height: 180px;
+    margin-bottom: 1rem;
   }
 
   /* * Force une seule colonne pour la grille des projets.
@@ -357,6 +358,16 @@ body {
   /* Optionnel : Réduire le rembourrage des cartes sur petit écran */
   .project-card {
     padding: 0.75rem;
+  }
+
+  /* La lisibilité des titres de sections */
+  h2{
+    font-size: 1.6rem;
+  }
+
+    /* Enlève les marges latérales pour maximiser l'espace utile sur les téléphones */
+  .container {
+    padding: 0 1rem;
   }
 
   /* Centrer le Footer quand l'espace est limité */
