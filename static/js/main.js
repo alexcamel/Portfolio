@@ -27,8 +27,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     // 2. Téléchargement du CV via internet
     const lienCV = document.getElementById('telecharger-cv');
+
     lienCV.addEventListener('click', (e) =>{
-        
+        e.preventDefault();
+        if (navigator.onLine) {
+            fetch(lienCV.href)
+                .then(response =>
+                    response.blob())
+                .then(blob => {
+                    const url = URL.createObjectURL(blob);
+                    const a = lienCV;
+                    a.href = url;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                })
+                .catch(error => console.error(error));
+        }else{
+            alert("Veuillez vous connecter à internet pour telecharger mon CV");
+        }
     });
     // Traduction via internet
     const langues = document.querySelector('.langues');

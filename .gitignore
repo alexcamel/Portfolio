@@ -1,6 +1,7 @@
 __pycache__
 messages.mo
 .env
+venv/
 README.txt
 root.txt
 
