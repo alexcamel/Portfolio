@@ -8,7 +8,13 @@ from flask_babel import Babel, get_locale # Ajout de get_locale pour le diagnost
 load_dotenv() 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'ma_clé_sécrète'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+# Ajout d'une vérification de sécurité
+if not app.config['SECRET_KEY']:
+    # Fallback pour générer une clé si aucune n'est trouvée (UNIQUEMENT pour le DÉVELOPPEMENT)
+    # Pour la PRODUCTION, Render doit TOUJOURS avoir la clé
+    app.config['SECRET_KEY'] = 'UNE_CLE_DE_SECOURS_POUR_DEV'
+
 babel = Babel(app)
 
 # --- 2. Configuration de Flask-Mail ---
