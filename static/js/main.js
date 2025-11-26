@@ -35,31 +35,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 2. TÉLÉCHARGEMENT ROBUSTE DU CV ---
+    // --- 2. TÉLÉCHARGEMENT DU CV VIA INTERNET---
     
     const lienCV = document.getElementById('telecharger-cv');
 
     if (lienCV) { 
         lienCV.addEventListener('click', (e) => {
-            e.preventDefault(); // Empêche le navigateur de naviguer directement vers le PDF
+            e.preventDefault(); // Empêchement du navigateur de naviguer directement vers le PDF
             
             if (navigator.onLine) {
                 const cvUrl = lienCV.href; 
                 
                 fetch(cvUrl)
                     .then(response => {
-                        // Gère les erreurs HTTP (404, 500, etc.)
+                        // Gestion des erreurs HTTP (404, 500, etc.)
                         if (!response.ok) {
                             throw new Error(`Erreur de réseau ou fichier introuvable. Statut: ${response.status}`);
                         }
                         return response.blob();
                     })
                     .then(blob => {
-                        // Crée un élément <a> temporaire pour forcer le téléchargement
+                        // Création d'un élément <a> temporaire pour forcer le téléchargement
                         const url = URL.createObjectURL(blob);
                         const a = document.createElement('a');
                         
-                        // Récupère le nom de fichier à partir de l'attribut 'download' ou du chemin
+                        // Récupèration du nom de fichier à partir de l'attribut 'download' ou du chemin
                         const fileName = lienCV.getAttribute('download') || 'Alex_Camel_CV.pdf';
                         
                         a.href = url;
@@ -108,14 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            // Optionnel: Vous pouvez ajouter ici une logique de validation JavaScript supplémentaire
-            // avant que l'action ne soit envoyée au serveur Flask.
             
-            // Si l'envoi échoue sur Render (souvent à cause de Flask-Mail), 
-            // la vérification côté serveur est la solution.
-            
-            // Note: Le problème de non-fonctionnalité ici est probablement côté Flask/Render
-            // (clés d'e-mail manquantes), et non côté JS.
         });
     }
 });
