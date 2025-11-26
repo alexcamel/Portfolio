@@ -9,7 +9,7 @@ load_dotenv()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
-# Ajout d'une vérification de sécurité
+# --- Ajout d'une vérification de sécurité ---
 if not app.config['SECRET_KEY']:
     # Fallback pour générer une clé si aucune n'est trouvée (UNIQUEMENT pour le DÉVELOPPEMENT)
     # Pour la PRODUCTION, Render doit TOUJOURS avoir la clé
