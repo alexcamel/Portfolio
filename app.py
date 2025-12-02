@@ -99,11 +99,12 @@ def send_email_async(subject, sender, recipients, body):
 
 # --- 3. Route de selection de langues ---
 
-@babel.localeselector
 def get_locale_selector():
     # Tente de lire le cookie en premier pour la fiabilité de Babel
     return request.cookies.get('lang') or session.get('lang', request.accept_languages.best_match(['fr', 'en']))
-
+# Initialisation explicite de Babel avec la fonction de sélection de locale. 
+# Ceci remplace l'utilisation du décorateur @babel.localeselector qui cause l'erreur.
+babel.init_app(app, locale_selector=get_locale_selector)
 
 @app.route('/lang/<lang>')
 def set_language(lang):
