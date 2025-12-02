@@ -76,18 +76,24 @@ def send_email_async(subject, sender, recipients, body):
 # --- 3. Route de selection de langues ---
 
 def get_locale_selector():
-    return session.get('lang', request.accept_languages.best_match(['fr', 'en']))
-
+    # ⭐ CORRECTION 1: Tente de lire le cookie en premier
+    return request.cookies.get('lang') or session.get('lang', request.accept_languages.best_match(['fr', 'en']))
 # Initialisation manuelle de Babel (Résout l'AttributeError lié au décorateur)
 babel.init_app(app, locale_selector=get_locale_selector)
 
 
 @app.route('/lang/<lang>')
 def set_language(lang):
+ # Assurez-vous que la langue est valide pour prévenir les erreurs
+    if lang not in ['fr', 'en']:
+        lang = 'fr' 
+
     session['lang'] = lang
     next_url = request.referrer if request.referrer else url_for('index')
-    
+ 
     resp = make_response(redirect(next_url))
+    # ⭐ CORRECTION 2: Définit le cookie pour une lecture fiable
+    resp.set_cookie('lang', lang)
     resp.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
     resp.headers['Pragma'] = 'no-cache'
     resp.headers['Expires'] = '0'
