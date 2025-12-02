@@ -26,10 +26,10 @@ app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
 try:
     # Tente de convertir le port en entier; utilise None si non défini
     port_value = os.environ.get('MAIL_PORT')
-    app.config['MAIL_PORT'] = int(port_value) if port_value else None
+    app.config['MAIL_PORT'] = int(port_value) if port_value else 465
 except ValueError:
     # Si défini mais non numérique
-    app.config['MAIL_PORT'] = None
+    app.config['MAIL_PORT'] = 465
 
 # Les conversions en booléen sont basées sur la valeur de l'environnement (ex: "True" -> True)
 app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS', 'False').lower() in ('true', '1', 't') 
@@ -44,7 +44,7 @@ app.config['RECIPIENT_EMAIL'] = os.getenv('RECIPIENT_EMAIL')
 # R3. Diagnostic de configuration Mail CRITIQUE
 # Ces valeurs doivent être correctes dans les logs de déploiement Render.
 print("-" * 50)
-print("DIAGNOSTIC FLASK-MAIL - VALEURS ACTUELLEMENT CHARGÉES")
+print("DIAGNOSTIC FLASK-MAIL - VALEURS ACTUELLEMENT CHARGÉES (TENTATIVE SSL/PORT 465)")
 print(f"MAIL_SERVER: {app.config['MAIL_SERVER']}")
 print(f"MAIL_PORT: {app.config['MAIL_PORT']}")
 print(f"MAIL_USE_TLS: {app.config['MAIL_USE_TLS']}")
