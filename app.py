@@ -10,6 +10,7 @@ from werkzeug.exceptions import InternalServerError
 # Chargement des variables d'environnement du fichier .env
 load_dotenv() 
 
+# Initialisation de l'application
 app = Flask(__name__)
 
 # --- 2. Configuration de Flask-Mail & SECRET_KEY (Robustesse pour Render) ---
@@ -22,7 +23,7 @@ if not app.config['SECRET_KEY']:
     # Ce message est essentiel pour le diagnostic sur Render si la clé manque
     print("ERREUR CRITIQUE: SECRET_KEY est manquant. Le déploiement risque d'échouer ou la session sera non sécurisée.")
     # Clé de secours pour le développement UNIQUEMENT
-    app.config['SECRET_KEY'] = 'UNE_CLE_DE_SECOURS_POUR_DEV_NE_PAS_UTILISER_EN_PROD'
+    app.config['SECRET_KEY'] = 'ma_clé_sécrète_de_secours'
 
 # R3. MAIL_SERVER: Lecture simple
 app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
@@ -42,8 +43,6 @@ else:
 app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS', 'True').lower() in ('true', '1', 't') 
 app.config['MAIL_USE_SSL'] = os.getenv('MAIL_USE_SSL', 'False').lower() in ('true', '1', 't') 
 app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT', 465))
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True
 
 # R6. Identifiants Mail
 app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
@@ -54,12 +53,14 @@ app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_USERNAME')
 if not all([app.config['MAIL_SERVER'], app.config['MAIL_USERNAME'], app.config['MAIL_PASSWORD'], app.config['MAIL_PORT']]):
     print("ALERTE: Configuration Flask-Mail incomplète. L'envoi d'e-mails sera impossible.")
 
+ # Initialisation de l'objet Mail
 mail = Mail(app)
-babel = Babel(app) # Initialisation de l'objet Babel
+
+ # Initialisation de l'objet Babel
+babel = Babel(app)
 
 # --- 3. Route de selection de langues ---
 
-# Fonction SANS décorateur pour le sélecteur de langue (Méthode compatible)
 def get_locale_selector():
     # Récupère la langue dans la session si elle est définie, sinon utilise la langue du navigateur.
     return session.get('lang', request.accept_languages.best_match(['fr', 'en']))
@@ -139,3 +140,9 @@ def handle_contact():
 if __name__ == '__main__':
     # Ne pas utiliser debug=True sur Render (production)
     app.run(debug=True)
+    
+    
+    
+    
+    
+   
