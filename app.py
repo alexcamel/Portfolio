@@ -32,8 +32,8 @@ except ValueError:
     app.config['MAIL_PORT'] = 465
 
 # Les conversions en booléen sont basées sur la valeur de l'environnement (ex: "True" -> True)
-app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS', 'False').lower() in ('true', '1', 't') 
-app.config['MAIL_USE_SSL'] = os.getenv('MAIL_USE_SSL', 'False').lower() in ('true', '1', 't') 
+app.config['MAIL_USE_TLS'] = False 
+app.config['MAIL_USE_SSL'] = True 
 
 app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
