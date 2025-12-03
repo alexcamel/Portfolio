@@ -20,6 +20,9 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'clé_de_secours_dev')
 # --- 3. Route de selection de langues et Configuration Babel ---
 
 # **Instanciation de l'objet Babel**
+app.config['BABEL_DEFAULT_LOCALE'] = os.environ.get('BABEL_DEFAULT_LOCALE', 'fr')
+app.config['BABEL_TRANSLATION_DIRECTORIES'] = os.environ.get('BABEL_TRANSLATION_DIRECTORIES', 'translations')
+
 babel = Babel() 
 
 # Fonction SANS DECORATEUR pour Babel
