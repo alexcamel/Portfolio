@@ -1,1 +1,1 @@
-web: gunicorn --timeout 120 app:app
+web: gunicorn --timeout 120 --log-level warning --bind 0.0.0.0:$PORT app:app
