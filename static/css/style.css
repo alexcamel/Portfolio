@@ -253,10 +253,6 @@ body {
   color: #666;
 }
 
-.langues a.active {
-  color: #337ab7;
-  font-weight: bold;
-}
 
 .footer p{
   font-family: "Roboto_Condensed";
