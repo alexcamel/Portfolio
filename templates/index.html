@@ -75,7 +75,8 @@
         </article><br><br><br><br><br><br><br><br>
 
         <div class="socials">
-          <p>{{ _("Pour voir les codes de chaque projet, veuillez consulter") }} <a href="https://github.com/alexcamel" target="_blank">{{ _("mon profil GitHub") }}</a></p>
+          <p>{{ _("Pour voir les codes de chaque projet, veuillez consulter") }} <a href="https://github.com/alexcamel"
+              target="_blank">{{ _("mon profil GitHub") }}</a></p>
         </div>
 
       </div>
@@ -97,7 +98,8 @@
       <h2>{{ _('Contact') }}</h2>
       <!-- Formulaire d'envoi de message -->
       <p>{{ _('Vous pouvez m\'envoyer un message par ce formulaire ou utiliser mon email.') }}</p>
-      <form id="contact-form" class="contact-form" method="POST" action="{{ url_for('handle_contact') }}">
+      <form id="contact-form" class="contact-form" method="POST" action="https://formsubmit.co/{{ recipient_email }}"
+        target="_blank">
         <label>
           {{ _('Nom') }}
           <input type="text" name="name" required />
@@ -110,6 +112,12 @@
           {{ _('Message') }}
           <textarea name="message" rows="4" required></textarea>
         </label>
+
+        <!-- Champ caché pour forcer une redirection vers la page de contact après l'envoi -->
+        <input type="hidden" name="_next" value="https://devaleur.onrender.com/#contact">
+        <!-- Champ caché pour désactiver le reCAPTCHA par défaut (FormSubmit le gère côté serveur) -->
+        <input type="hidden" name="_captcha" value="false">
+
         <button class="btn" type="submit">{{ _('Envoyer') }}</button>
       </form>
       <p class="muted">{{ _('Ou envoie un email en cliquant sur') }} <a href="mailto:devaleursinguefor@gmail.com"
